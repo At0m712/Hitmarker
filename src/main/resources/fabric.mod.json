@@ -3,17 +3,16 @@
 	"id": "hitmarker",
 	"version": "${version}",
 	"name": "HitMarker",
-	"description": "This mod add an HitMarker with every throwable objet (arrow,egg,trident,...)",
+	"description": "This mod adds a HitMarker indicator when you hit an entity with throwable items (arrow, egg, trident, etc.).",
 	"authors": [
 		"At0m"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/At0m712/hitmarker"
 	},
 	"license": "MIT",
 	"icon": "assets/hitmarker/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"atom.hitmarker.HitMarker"
@@ -30,8 +29,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "26.1",
-		"java": ">=21",
+		"minecraft": ">=26.1 <=26.1.2",
+		"java": ">=25",
 		"fabric-api": "*"
 	}
 }
