@@ -12,7 +12,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.HitResult.Type;
 
 @Mixin(Projectile.class)
 public abstract class ProjectileMixin {
@@ -24,16 +23,15 @@ public abstract class ProjectileMixin {
 			Entity owner = projectile.getOwner();
 			Minecraft client = Minecraft.getInstance();
 
-			if (owner != null && client.player != null && owner.getId() == client.player.getId()) {
+			if (client.player != null && (owner == client.player || (owner != null && owner.getId() == client.player.getId()))) {
 				EntityHitResult entityHit = (EntityHitResult) hitResult;
 				Entity hitEntity = entityHit.getEntity();
 
-				if (hitEntity instanceof LivingEntity) {
+				if (hitEntity instanceof LivingEntity livingEntity) {
 					client.execute(() -> {
-						HitMarkerClient.projectileHit((LivingEntity) hitEntity);
+						HitMarkerClient.projectileHit(livingEntity);
 					});
 				}
-
 			}
 		}
 	}

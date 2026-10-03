@@ -7,7 +7,7 @@
 
 <br>
 
-![Video demonstration of the mod]()
+![Video demonstration of the mod](https://i.imgur.com/htYR3Nk.gif)
 
 <br> 
 
@@ -15,14 +15,15 @@
 
 <br>
 
-HME come with 3 different HitMarker style and you can disable the Sound, use commands below to change the style !
+HME comes with 4 different HitMarker styles and allows you to toggle the hit sound. Use the commands below to customize your experience!
 
 ![HitMarker styles](https://i.imgur.com/mKRvC3Q.png)
 
-+ ``` /HitMarker Style 1 ```
-+ ``` /HitMarker Style 2 ```
-+ ``` /HitMarker Style 3 ```
-+ ``` /HitMarker Sound ```
++ ` /HitMarker Style 1 `
++ ` /HitMarker Style 2 `
++ ` /HitMarker Style 3 `
++ ` /HitMarker Style 4 `
++ ` /HitMarker Sound true/false `
 
 ---
 
