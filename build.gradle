@@ -80,7 +80,7 @@ publishing {
 	}
 }
 publishMods {
-	file = jar.archiveFile
+	file = remapJar.archiveFile
 	changelog = providers.fileContents(layout.projectDirectory.file("CHANGELOG.md")).asText.get()
 	type = STABLE
 	version = project.mod_version
@@ -95,7 +95,7 @@ publishMods {
 
 		minecraftVersionRange {
 			start = "1.21.2"
-			end = "1.21.4"
+			end = "1.21.5"
 		}
 
 		client = true
@@ -110,7 +110,7 @@ publishMods {
 
 		minecraftVersionRange {
 			start = "1.21.2"
-			end = "1.21.4"
+			end = "1.21.5"
 		}
 
 		requires("fabric-api")

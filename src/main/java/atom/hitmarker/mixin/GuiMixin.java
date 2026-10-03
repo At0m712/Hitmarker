@@ -9,15 +9,11 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
 
-import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
-
+import atom.hitmarker.HitMarkerClient;
+import atom.hitmarker.ModConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-
-import atom.hitmarker.HitMarkerClient;
-import atom.hitmarker.ModConfig;
 
 
 @Mixin(Gui.class)

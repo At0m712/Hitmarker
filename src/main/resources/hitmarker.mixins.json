@@ -3,7 +3,6 @@
 	"package": "atom.hitmarker.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ProjectileMixin"
 	],
 	"client": [
 		"GuiMixin",
