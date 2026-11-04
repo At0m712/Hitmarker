@@ -1,6 +1,4 @@
-# Changelog 1.0.1 (Minecraft 26.3)
-- Ported to Minecraft 26.3
-- Migrated crosshair rendering to Fabric `HudElementRegistry`
-- Added HitMarker Style 4
-- Fixed projectile hit detection and timing
-- Added sound subtitles
+# Changelog 1.0.2 (Minecraft 26.3)
+- Automatic settings persistence in `config/hitmarker.json`
+- Added lowercase `/hitmarker` command support (with `/HitMarker` alias)
+- Command status feedback when running `/hitmarker` without arguments
