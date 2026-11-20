@@ -1,17 +1,18 @@
 package atom.hitmarker.mixin;
 
+import atom.hitmarker.HitMarkerClient;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import atom.hitmarker.HitMarkerClient;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.phys.HitResult;
 
 @Mixin(Projectile.class)
 public abstract class ProjectileMixin {
@@ -27,10 +28,11 @@ public abstract class ProjectileMixin {
 				EntityHitResult entityHit = (EntityHitResult) hitResult;
 				Entity hitEntity = entityHit.getEntity();
 
-				if (hitEntity instanceof LivingEntity livingEntity) {
-					client.execute(() -> {
-						HitMarkerClient.projectileHit(livingEntity);
-					});
+				if (hitEntity instanceof LivingEntity livingEntity
+						&& !(livingEntity instanceof ArmorStand)
+						&& !livingEntity.isInvulnerable()
+						&& !(livingEntity instanceof Player player && (player.isCreative() || player.isSpectator()))) {
+					client.execute(() -> HitMarkerClient.projectileHit(livingEntity));
 				}
 			}
 		}
